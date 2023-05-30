@@ -1,0 +1,13 @@
+#d1{
+    /* height: 100vh; */
+    /* width: 100%; */
+    /* background-image: linear-gradient(0,0,0,)url(./); */
+    margin-left: 500px;
+    margin-top: 200px;
+}
+#g{
+    transition: .5s ease-in-out;
+}
+#g:hover{
+    transform: scale(1.05);
+}

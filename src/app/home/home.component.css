@@ -4,3 +4,6 @@
 #g:hover{
     transform: scale(1.05);
 }
+.first{
+    border: 1px solid white;
+}
