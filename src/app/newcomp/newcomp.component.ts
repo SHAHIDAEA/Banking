@@ -13,22 +13,40 @@ export class NewcompComponent implements OnInit{
   data="happy banking with us"
   pdata="enter account no"
   serviceData:any
+acno:any
+psw:any
+
+
 constructor(private rout:Router, private ds:DataService){
 
 }
 ngOnInit():void{
- this.serviceData= this.ds.sdata
  console.log(this.serviceData);
- this.ds.smethod()
  
 }
 
 login(){
-  alert("login clicked")
-  this.rout.navigateByUrl("home") 
+//   alert("login clicked")
+//   this.rout.navigateByUrl("home") 
+// }
+// acnochange(event:any){
+//   console.log(event.target.value);
+
+// console.log(this.acno);
+// console.log(this.psw);
+var acno=this.acno
+var psw=this.psw
+this.ds.login(acno,psw).subscribe((result:any)=>{
+  alert(result.message)
+    this.rout.navigateByUrl("home") 
+
+},
+result=>{
+  alert(result.error.message)
 }
-acnochange(event:any){
-  console.log(event.target.value);
+)
+
+
   
 }
 
